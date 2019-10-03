@@ -63,6 +63,27 @@
           }
         }
       };
+
+      var counter = 0;
+      function culc(obj) {
+        for (const key in obj) {
+          if (key == 'age') {
+            counter += obj[key];
+          } else if (typeof obj[key] == 'object') {
+            var now = obj[key];
+            culc(now);
+          }
+        }
+      }
+
+      culc(family);
+      console.log(counter);
+
+
+
+
+
+
     </script>
        
 
